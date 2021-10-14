@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "electron": "^15.0.0"
+  },
+  "name": "Triangulo de Pascal",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
