@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]){
     pid_t pid, pid2, pid3;
-    int status1, status2;
+    
 
     pid=fork();
     
@@ -19,16 +19,17 @@ int main(int argc, char *argv[]){
         pid2=fork();        //Generem el segon fill
 
         if(pid2==0){        //Soc el fill 2
-                //waitpid(pid, &status1, 0);
+                
+                wait(NULL);
                 printf("Soc el fill 2, el meu pare es PID=%d, jo soc PID=%d\n",getppid(), getpid());
 
                 pid3=fork();    //Generem el net
                 if(pid3==0){
-                    int pare;
-                    pare=getppid();
-                    waitpid(pid, &status1, 0);
-                    waitpid(pid2, &status2, 0);
-                    printf("Soc el net, el meu pare es PID=%d, jo soc PID=%d\n",pare, getpid());
+                    wait(NULL);
+                   
+                    
+                    printf("Soc el net, el meu pare es PID=%d, jo soc PID=%d\n",getppid(), getpid());
+                    
                  }
         }
     }
